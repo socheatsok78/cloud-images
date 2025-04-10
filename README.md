@@ -1,4 +1,7 @@
 # About
+
+![logo.png](/logo.png)
+
 A collections of documentations, repositories and tools for Cloud Images and Cloud Init
 
 ## What is Cloud Images/Init?
