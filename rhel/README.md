@@ -13,21 +13,22 @@ To obtain the latest RHEL Cloud Images, you need the following:
 - [Red Hat Enterprise Linux (RHEL)](#red-hat-enterprise-linux-rhel)
   - [Navigating the Red Hat Cloud Console](#navigating-the-red-hat-cloud-console)
   - [Using the Image Builder tool](#using-the-image-builder-tool)
-  - [1. Create a blueprint](#1-create-a-blueprint)
-    - [Step 1: Image output](#step-1-image-output)
-    - [Step 2: Optional steps](#step-2-optional-steps)
-      - [1. Register your system to Red Hat](#1-register-your-system-to-red-hat)
-      - [2. OpenSCAP](#2-openscap)
-      - [3. File system configuration](#3-file-system-configuration)
-      - [4. Repository snapshot](#4-repository-snapshot)
-      - [5. Custom repositories](#5-custom-repositories)
-      - [6. Additional packages](#6-additional-packages)
-      - [7. Timezone](#7-timezone)
-      - [8. Locale](#8-locale)
-      - [9. First boot script configuration](#9-first-boot-script-configuration)
-  - [2. Details](#2-details)
-  - [3. Review](#3-review)
-  - [4. Download images](#4-download-images)
+    - [1. Create a blueprint](#1-create-a-blueprint)
+      - [Step 1: Image output](#step-1-image-output)
+      - [Step 2: Optional steps](#step-2-optional-steps)
+        - [1. Register your system to Red Hat](#1-register-your-system-to-red-hat)
+        - [2. OpenSCAP](#2-openscap)
+        - [3. File system configuration](#3-file-system-configuration)
+        - [4. Repository snapshot](#4-repository-snapshot)
+        - [5. Custom repositories](#5-custom-repositories)
+        - [6. Additional packages](#6-additional-packages)
+        - [7. Timezone](#7-timezone)
+        - [8. Locale](#8-locale)
+        - [9. First boot script configuration](#9-first-boot-script-configuration)
+      - [Step 2. Details](#step-2-details)
+      - [Step 3. Review](#step-3-review)
+  - [2. Building images](#2-building-images)
+  - [3. Managing images](#3-managing-images)
 
 ## Navigating the Red Hat Cloud Console
 
@@ -51,14 +52,14 @@ Here are necessary steps to create an image:
 3. Download images to your local machine or upload them to your cloud provider
 4. Deploy the images to your desired environment
 
-## 1. Create a blueprint
+### 1. Create a blueprint
 
 In the "**Image Builder**" tool, you can create a blueprint for your image. A blueprint is a set of instructions that defines how the image should be built. You can use the provided blueprints or create your own.
 
 Click on the "**Create blueprint**" button at the top right corner of the page.
 ![rhel-image-builder-1.png](./assets/rhel-image-builder-1.png)
 
-### Step 1: Image output
+#### Step 1: Image output
 
 In the "**Image output**" section, select the image type you want to create. In this example, we will create a **VMWare vSphere** image.
 
@@ -71,7 +72,7 @@ In the "**Image output**" section, select the image type you want to create. In 
 Check the "**VMWare vSphere**" option and choose the "**Open virtualization format (.ova)**".
 ![rhel-image-builder-3.png](./assets/rhel-image-builder-3.png)
 
-### Step 2: Optional steps
+#### Step 2: Optional steps
 
 > [!NOTE]
 > You can skip this step by clicking on the "Review and finish" botton at the bottom of the page.
@@ -87,7 +88,7 @@ The optional steps includes:
 8. Locale
 9. First boot script configuration
 
-#### 1. Register your system to Red Hat
+##### 1. Register your system to Red Hat
 
 You can either automatically register your systems with **Red Hat** to enhance security and track your spending or choose to register your system during initial boot.
 
@@ -95,13 +96,13 @@ The "**Activation key**" will be automatically generated for you. You can use th
 
 ![rhel-image-builder-4.png](./assets/rhel-image-builder-4.png)
 
-#### 2. OpenSCAP
+##### 2. OpenSCAP
 
 OpenSCAP enables you to automatically monitor the adherence of your registered RHEL systems to a selected regulatory compliance profile.
 
 ![rhel-image-builder-5.png](./assets/rhel-image-builder-5.png)
 
-#### 3. File system configuration
+##### 3. File system configuration
 
 Define the partitioning of the image
 
@@ -114,7 +115,7 @@ Create partitions for your image by defining mount points and minimum sizes. Ima
 ![rhel-image-builder-6.png](./assets/rhel-image-builder-6.png)
 
 
-#### 4. Repository snapshot
+##### 4. Repository snapshot
 Control the consistency of the packages in the repository used to build the image.
 
 By default, Image Builder will automatically use the newest state of repositories when building this image.
@@ -122,7 +123,7 @@ By default, Image Builder will automatically use the newest state of repositorie
 ![rhel-image-builder-7.png](./assets/rhel-image-builder-7.png)
 
 
-#### 5. Custom repositories
+##### 5. Custom repositories
 
 Select the linked custom repositories from which you can add packages to the image.
 
@@ -134,25 +135,25 @@ Select the linked custom repositories from which you can add packages to the ima
 ![rhel-image-builder-8.png](./assets/rhel-image-builder-8.png)
 
 
-#### 6. Additional packages
+##### 6. Additional packages
 
 Blueprints created with Images include all required packages.
 
 ![rhel-image-builder-9.png](./assets/rhel-image-builder-9.png)
 
-#### 7. Timezone
+##### 7. Timezone
 
 Select a timezone and NTP servers for the image.
 
 ![rhel-image-builder-10.png](./assets/rhel-image-builder-10.png)
 
-#### 8. Locale
+##### 8. Locale
 
 Select language and keyboard layout for the image.
 
 ![rhel-image-builder-11.png](./assets/rhel-image-builder-11.png)
 
-#### 9. First boot script configuration
+##### 9. First boot script configuration
 Configure the image with a custom script that will execute on its first boot.
 
 > ![Important]
@@ -162,13 +163,13 @@ Configure the image with a custom script that will execute on its first boot.
 
 ![rhel-image-builder-12.png](./assets/rhel-image-builder-12.png)
 
-## 2. Details
+#### Step 2. Details
 
 In the "**Details**" section, you can provide a name and description for your image.
 
 ![rhel-image-builder-13.png](./assets/rhel-image-builder-13.png)
 
-## 3. Review
+#### Step 3. Review
 
 The "**Review**" section allows you to review the settings you have selected for your image. You can go back and make changes if needed.
 
@@ -180,14 +181,23 @@ Once you are satisfied with your selections, click on the "**Create blueprint**"
 
 Alternatively, you can click on the "**Create blueprint and build image(s)**" button to create the blueprint and start building the image immediately.
 
-![rhel-image-builder-16.png](./assets/rhel-image-builder-15.png)
+![rhel-image-builder-16.png](./assets/rhel-image-builder-16.png)
 
+## 2. Building images
 
-## 4. Download images
+Once you have created a blueprint, you can build images based on that blueprint.
 
-Once the image is built, you can download it to your local machine.
+To build an image, select the blueprint you want to use and click on the "**Build image**" button at the top right corner of the page.
 
-![rhel-image-builder-17.png](./assets/rhel-image-builder-16.png)
+**Example**: `rhel-9-x86_64-04102025-1704` blueprint
+
+![rhel-image-builder-17.png](./assets/rhel-image-builder-17.png)
+
+## 3. Managing images
+
+You can manage your images in the "**Image Builder**" tool. You can view the status of your images, download them, or upload them to your cloud provider.
+
+![rhel-image-builder-18.png](./assets/rhel-image-builder-18.png)
 
 <!-- Links -->
 [Activation Keys page]: https://console.redhat.com/insights/connector/activation-keys
