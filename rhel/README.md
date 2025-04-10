@@ -27,8 +27,8 @@ To obtain the latest RHEL Cloud Images, you need the following:
         - [9. First boot script configuration](#9-first-boot-script-configuration)
       - [Step 2. Details](#step-2-details)
       - [Step 3. Review](#step-3-review)
-  - [2. Building images](#2-building-images)
-  - [3. Managing images](#3-managing-images)
+    - [2. Building images](#2-building-images)
+    - [3. Managing images](#3-managing-images)
 
 ## Navigating the Red Hat Cloud Console
 
@@ -183,7 +183,7 @@ Alternatively, you can click on the "**Create blueprint and build image(s)**" bu
 
 ![rhel-image-builder-16.png](./assets/rhel-image-builder-16.png)
 
-## 2. Building images
+### 2. Building images
 
 Once you have created a blueprint, you can build images based on that blueprint.
 
@@ -193,7 +193,7 @@ To build an image, select the blueprint you want to use and click on the "**Buil
 
 ![rhel-image-builder-17.png](./assets/rhel-image-builder-17.png)
 
-## 3. Managing images
+### 3. Managing images
 
 You can manage your images in the "**Image Builder**" tool. You can view the status of your images, download them, or upload them to your cloud provider.
 
