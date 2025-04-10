@@ -29,7 +29,7 @@ To obtain the latest RHEL Cloud Images, you need the following:
       - [Step 3. Review](#step-3-review)
     - [2. Building images](#2-building-images)
     - [3. Managing images](#3-managing-images)
-  - [Deploying the image to vSphere](#deploying-the-image-to-vsphere)
+  - [Configuring credentials to access your deployed systems with cloud-init](#configuring-credentials-to-access-your-deployed-systems-with-cloud-init)
 
 ## Navigating the Red Hat Cloud Console
 
@@ -206,6 +206,27 @@ You can manage your images in the "**Image Builder**" tool. You can view the sta
 <!-- Links -->
 [Activation Keys page]: https://console.redhat.com/insights/connector/activation-keys
 
-## Deploying the image to vSphere
+## Configuring credentials to access your deployed systems with cloud-init 
 
-> WIP
+You cannot add a username and password to a blueprint by using the Red Hat Insights images UI interface. To add a `username` and `password` to your image, use the `cloud-init` tool.
+
+The Open virtualization format (`.ova`) is a `.vmdk` image with additional metadata about the virtual hardware. The `.ova` image contains the `cloud-init` package installed that you can use to provision users by using a `user-data` file, for example.
+
+Instead of sharing your login credentials to a hosted service, use `cloud-init` and `open-vm-tools`, that are installed within the image and enabled by default. For example, you can use it to pass the credentials to the VMware vSphere Cloud Director by using cloud-init.
+
+**Procedure**:
+1. Access the directory where you downloaded your .ova image.
+2. Create a file named metadata.yaml and add the following information to this file:
+    ```yaml
+    instance-id: cloud-vm
+    local-hostname: vmname
+    ```
+3. Create a file userdata.yaml. Add the following information to the file:
+    ```yaml
+    #cloud-config
+    users:
+    - name: admin
+      sudo: "ALL=(ALL) NOPASSWD:ALL"
+      ssh_authorized_keys:
+      - ssh-rsa AAA...fhHQ== your.email@example.com
+    ```
