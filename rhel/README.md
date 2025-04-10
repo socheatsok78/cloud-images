@@ -130,7 +130,7 @@ Select the linked custom repositories from which you can add packages to the ima
 > [!NOTE]
 > Repositories can be added in the "Repositories" area of the console. Once added, refresh this page to see them.
 >
-> You can add custom repositories following this guide [here](./custom_repositories.md).
+> You can add custom repositories following this guide [here](./custom-repositories.md).
 
 ![rhel-image-builder-8.png](./assets/rhel-image-builder-8.png)
 
