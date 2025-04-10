@@ -29,6 +29,7 @@ To obtain the latest RHEL Cloud Images, you need the following:
       - [Step 3. Review](#step-3-review)
     - [2. Building images](#2-building-images)
     - [3. Managing images](#3-managing-images)
+  - [Deploying the image to vSphere](#deploying-the-image-to-vsphere)
 
 ## Navigating the Red Hat Cloud Console
 
@@ -141,6 +142,9 @@ Blueprints created with Images include all required packages.
 
 ![rhel-image-builder-9.png](./assets/rhel-image-builder-9.png)
 
+> [!NOTE]
+> With cloud-init, you may need to add `cloud-utils-growpart` as an additional package to ensure that the image can resize the root partition on first boot.
+
 ##### 7. Timezone
 
 Select a timezone and NTP servers for the image.
@@ -201,3 +205,7 @@ You can manage your images in the "**Image Builder**" tool. You can view the sta
 
 <!-- Links -->
 [Activation Keys page]: https://console.redhat.com/insights/connector/activation-keys
+
+## Deploying the image to vSphere
+
+> WIP
