@@ -15,8 +15,8 @@ These are the publicly available cloud images repositories:
 - Debian: [site](http://debian.org/) | [download](https://cloud.debian.org/images/cloud/)
 - Ubuntu: [site](https://ubuntu.com/) | [download](https://cloud-images.ubuntu.com/)
 - Rocky Linux: [site](https://rockylinux.org/) | [download](https://rockylinux.org/download/)
-- Fedora: [site](https://fedoraproject.org/) | [download](https://fedoraproject.org/cloud/download/) | [guide](./rhel/README.md)
-- Red Hat Enterprise Linux: [site](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/) | [download](https://developers.redhat.com/products/rhel/download/)
+- Fedora: [site](https://fedoraproject.org/) | [download](https://fedoraproject.org/cloud/download/)
+- Red Hat Enterprise Linux: [site](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/) | [download](https://developers.redhat.com/products/rhel/download/) | [guide](./rhel/README.md)
 
 ## Virtualization Environments
 These are the virtualization environments that supports virtual machine deployment using cloud image:
