@@ -12,16 +12,17 @@ https://cloud-init.io/
 ## Cloud Images
 These are the publicly available cloud images repositories:
 
-- Debian: [site](http://debian.org) | [download](https://cloud.debian.org/images/cloud/)
+- Debian: [site](http://debian.org/) | [download](https://cloud.debian.org/images/cloud/)
 - Ubuntu: [site](https://ubuntu.com/) | [download](https://cloud-images.ubuntu.com/)
-- Red Hat Enterprise Linux: [site](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux) | [download](https://developers.redhat.com/products/rhel/download#publicandprivatecloudreadyrhelimages)
-- Rocky Linux: [site](https://rockylinux.org) | [download](https://rockylinux.org/download)
+- Rocky Linux: [site](https://rockylinux.org/) | [download](https://rockylinux.org/download/)
+- Fedora: [site](https://fedoraproject.org/) | [download](https://fedoraproject.org/cloud/download/)
+- Red Hat Enterprise Linux: [site](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/) | [download](https://developers.redhat.com/products/rhel/download/)
 
 ## Virtualization Environments
 These are the virtualization environments that supports virtual machine deployment using cloud image:
 - LXD: [site](https://canonical.com/lxd)
 - Proxmox: [site](https://www.proxmox.com/)
-- VMware vSphere: [site](https://www.vmware.com/products/cloud-infrastructure/vsphere)
+- VMware vSphere: [site](https://www.vmware.com/products/cloud-infrastructure/vsphere/)
 
 ## Tools
 - cloud-init: [site](https://cloud-init.io/) | [docs](https://cloudinit.readthedocs.io/en/latest/)
