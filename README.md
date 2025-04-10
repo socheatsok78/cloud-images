@@ -26,3 +26,4 @@ These are the virtualization environments that supports virtual machine deployme
 
 ## Tools
 - cloud-init: [site](https://cloud-init.io/) | [docs](https://cloudinit.readthedocs.io/en/latest/)
+- Image Builder: [site](https://osbuild.org/)
