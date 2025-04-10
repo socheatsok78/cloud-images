@@ -230,3 +230,5 @@ Instead of sharing your login credentials to a hosted service, use `cloud-init` 
       ssh_authorized_keys:
       - ssh-rsa AAA...fhHQ== your.email@example.com
     ```
+
+Source: [Red Hat Documentation](https://docs.redhat.com/en/documentation/red_hat_insights/1-latest/html/deploying_and_managing_rhel_systems_in_hybrid_clouds/deploying-your-customized-images_host-management-services#configuring-credentials-to-access-your-deployed-systems_deploying-your-customized-images)
