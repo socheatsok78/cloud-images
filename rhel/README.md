@@ -2,6 +2,9 @@
 
 Everywhere enterprise IT is headed, Red Hat® Enterprise Linux® is there. From the public cloud to the edge, it evolves to bring flexibility and reliability to new frontiers.
 
+> [!IMPORTANT]
+> Please note that this guide is for educational purposes only. It is not intended for production use. For production environments, please refer to the official Red Hat documentation.
+
 ## RHEL Cloud Images
 
 To obtain the latest RHEL Cloud Images, you need the following:
