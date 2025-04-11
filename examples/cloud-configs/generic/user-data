@@ -1,0 +1,5 @@
+#cloud-config
+# openssl passwd -6 -salt $(uuidgen) pa$$w0rd
+password: $6$E0787DA8-248A-42$rsyK9AaCWtm6OeSnevzp66OmFhSvOrwDUhvtR5p3qc2IQiDlsfHm4oJmJOjbxDe6lrc8Txh5UKAkqLIi9yLv60
+chpasswd: { expire: False }
+ssh_pwauth: True
