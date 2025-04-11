@@ -1,0 +1,66 @@
+diff --git a/image.ovf b/image.ovf
+index 05bbc22..4f40831 100644
+--- a/image.ovf
++++ b/image.ovf
+@@ -9,6 +9,9 @@
+   </DiskSection>
+   <NetworkSection>
+     <Info>The list of logical networks</Info>
++    <Network ovf:name="VM Network">
++      <Description>The VM Network network</Description>
++    </Network>
+   </NetworkSection>
+   <VirtualSystem ovf:id="image">
+     <Info>A virtual machine</Info>
+@@ -16,6 +19,33 @@
+     <OperatingSystemSection ovf:id="100" vmw:osType="other26xLinux64Guest">
+       <Info>The kind of installed guest operating system</Info>
+     </OperatingSystemSection>
++    <ProductSection ovf:required="false">
++      <Info>Cloud-Init customization</Info>
++      <Product>Red Hat Enterprise Linux (RHEL) 9</Product>
++      <Property ovf:userConfigurable="true" ovf:value="id-ovf" ovf:type="string" ovf:key="instance-id">
++        <Label>A Unique Instance ID for this instance</Label>
++        <Description>Specifies the instance id.  This is required and used to determine if the machine should take "first boot" actions</Description>
++      </Property>
++      <Property ovf:userConfigurable="true" ovf:value="rhelguest" ovf:type="string" ovf:key="hostname">
++        <Description>Specifies the hostname for the appliance</Description>
++      </Property>
++      <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="seedfrom">
++        <Label>Url to seed instance data from</Label>
++        <Description>This field is optional, but indicates that the instance should 'seed' user-data and meta-data from the given url.  If set to 'http://tinyurl.com/sm-' is given, meta-data will be pulled from http://tinyurl.com/sm-meta-data and user-data from http://tinyurl.com/sm-user-data.  Leave this empty if you do not want to seed from a url.</Description>
++      </Property>
++      <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="public-keys">
++        <Label>ssh public keys</Label>
++        <Description>This field is optional, but indicates that the instance should populate the default user's 'authorized_keys' with this value</Description>
++      </Property>
++      <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="user-data">
++        <Label>Encoded user-data</Label>
++        <Description>In order to fit into a xml attribute, this value is base64 encoded . It will be decoded, and then processed normally as user-data.</Description>
++      </Property>
++      <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="password">
++        <Label>Default User's password</Label>
++        <Description>If set, the default user's password will be set to this value to allow password based login.  The password will be good for only a single login.  If set to the string 'RANDOM' then a random password will be generated, and written to the console.</Description>
++      </Property>
++    </ProductSection>
+     <VirtualHardwareSection ovf:transport="com.vmware.guestInfo">
+       <Info>Virtual hardware requirements</Info>
+       <System>
+@@ -72,6 +102,17 @@
+         <rasd:ResourceType>17</rasd:ResourceType>
+         <vmw:Config ovf:required="false" vmw:key="backing.writeThrough" vmw:value="false"/>
+       </Item>
++      <Item>
++        <rasd:AddressOnParent>7</rasd:AddressOnParent>
++        <rasd:AutomaticAllocation>true</rasd:AutomaticAllocation>
++        <rasd:Connection>VM Network</rasd:Connection>
++        <rasd:Description>VmxNet3 ethernet adapter on "VM Network"</rasd:Description>
++        <rasd:ElementName>Ethernet 1</rasd:ElementName>
++        <rasd:InstanceID>6</rasd:InstanceID>
++        <rasd:ResourceSubType>VmxNet3</rasd:ResourceSubType>
++        <rasd:ResourceType>10</rasd:ResourceType>
++        <vmw:Config ovf:required="false" vmw:key="wakeOnLanEnabled" vmw:value="true"/>
++      </Item>
+       <vmw:Config ovf:required="false" vmw:key="bootOptions.efiSecureBootEnabled" vmw:value="false"/>
+       <vmw:Config ovf:required="false" vmw:key="firmware" vmw:value="efi"/>
+     </VirtualHardwareSection>

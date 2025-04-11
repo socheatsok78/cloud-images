@@ -52,34 +52,40 @@ Add the following properties as a child of `<VirtualSystem>` in the `image.ovf` 
 > The `cloud-init` packages is required to be installed in the image.
 
 ```xml
-<ProductSection ovf:required="false">
-  <Info>Cloud-Init customization</Info>
-  <!-- Uncomment and modify this following line -->
-  <!-- <Product>Red Hat Enterprise Linux [version]</Product> -->
-  <Property ovf:userConfigurable="true" ovf:value="id-ovf" ovf:type="string" ovf:key="instance-id">
-    <Label>A Unique Instance ID for this instance</Label>
-    <Description>Specifies the instance id.  This is required and used to determine if the machine should take "first boot" actions</Description>
-  </Property>
-  <Property ovf:userConfigurable="true" ovf:value="rhelguest" ovf:type="string" ovf:key="hostname">
-    <Description>Specifies the hostname for the appliance</Description>
-  </Property>
-  <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="seedfrom">
-    <Label>Url to seed instance data from</Label>
-    <Description>This field is optional, but indicates that the instance should 'seed' user-data and meta-data from the given url.  If set to 'http://tinyurl.com/sm-' is given, meta-data will be pulled from http://tinyurl.com/sm-meta-data and user-data from http://tinyurl.com/sm-user-data.  Leave this empty if you do not want to seed from a url.</Description>
-  </Property>
-  <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="public-keys">
-    <Label>ssh public keys</Label>
-    <Description>This field is optional, but indicates that the instance should populate the default user's 'authorized_keys' with this value</Description>
-  </Property>
-  <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="user-data">
-    <Label>Encoded user-data</Label>
-    <Description>In order to fit into a xml attribute, this value is base64 encoded . It will be decoded, and then processed normally as user-data.</Description>
-  </Property>
-  <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="password">
-    <Label>Default User's password</Label>
-    <Description>If set, the default user's password will be set to this value to allow password based login.  The password will be good for only a single login.  If set to the string 'RANDOM' then a random password will be generated, and written to the console.</Description>
-  </Property>
-</ProductSection>
+  <VirtualSystem ovf:id="image">
+    <!-- <OperatingSystemSection>...</OperatingSystemSection> -->
+
+    <ProductSection ovf:required="false">
+      <Info>Cloud-Init customization</Info>
+      <!-- Uncomment and modify this following line -->
+      <!-- <Product>Red Hat Enterprise Linux (RHEL) [version]</Product> -->
+      <Property ovf:userConfigurable="true" ovf:value="id-ovf" ovf:type="string" ovf:key="instance-id">
+        <Label>A Unique Instance ID for this instance</Label>
+        <Description>Specifies the instance id.  This is required and used to determine if the machine should take "first boot" actions</Description>
+      </Property>
+      <Property ovf:userConfigurable="true" ovf:value="rhelguest" ovf:type="string" ovf:key="hostname">
+        <Description>Specifies the hostname for the appliance</Description>
+      </Property>
+      <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="seedfrom">
+        <Label>Url to seed instance data from</Label>
+        <Description>This field is optional, but indicates that the instance should 'seed' user-data and meta-data from the given url.  If set to 'http://tinyurl.com/sm-' is given, meta-data will be pulled from http://tinyurl.com/sm-meta-data and user-data from http://tinyurl.com/sm-user-data.  Leave this empty if you do not want to seed from a url.</Description>
+      </Property>
+      <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="public-keys">
+        <Label>ssh public keys</Label>
+        <Description>This field is optional, but indicates that the instance should populate the default user's 'authorized_keys' with this value</Description>
+      </Property>
+      <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="user-data">
+        <Label>Encoded user-data</Label>
+        <Description>In order to fit into a xml attribute, this value is base64 encoded . It will be decoded, and then processed normally as user-data.</Description>
+      </Property>
+      <Property ovf:userConfigurable="true" ovf:type="string" ovf:key="password">
+        <Label>Default User's password</Label>
+        <Description>If set, the default user's password will be set to this value to allow password based login.  The password will be good for only a single login.  If set to the string 'RANDOM' then a random password will be generated, and written to the console.</Description>
+      </Property>
+    </ProductSection>
+
+    <!-- <VirtualHardwareSection>...</VirtualHardwareSection> -->
+  </VirtualSystem>
 ```
 
 See [example.ovf](../ova/example.ovf) for a complete example.
