@@ -23,6 +23,11 @@ The file order is important. The `image.ovf` file must be first, followed by the
 
 ```bash
 tar -cvf <ova_file>.ova image.ovf image.vmdk image.mf
+
+# or, enforce POSIX-compatible format
+tar -cvf <ova_file>.ova --format=ustar image.ovf image.vmdk image.mf
+
+# --format=ustar format stands for "Uniform Standard Tape ARchive", which is a POSIX.1-compliant tar format. It ensures a certain level of portability and compatibility across different systems and applications that read tar archives.
 ```
 
 ## Cloud-init properties
