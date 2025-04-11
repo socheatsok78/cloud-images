@@ -214,6 +214,9 @@ The Open virtualization format (`.ova`) is a `.vmdk` image with additional metad
 
 Instead of sharing your login credentials to a hosted service, use `cloud-init` and `open-vm-tools`, that are installed within the image and enabled by default. For example, you can use it to pass the credentials to the VMware vSphere Cloud Director by using cloud-init.
 
+> [!IMPORTANT]
+> With cloud-init, you need to add `cloud-utils-growpart` as an additional package to ensure that the image can resize the root partition on first boot.
+
 **Procedure**:
 1. Access the directory where you downloaded your .ova image.
 2. Create a file named metadata.yaml and add the following information to this file:
@@ -230,8 +233,5 @@ Instead of sharing your login credentials to a hosted service, use `cloud-init` 
       ssh_authorized_keys:
       - ssh-rsa AAA...fhHQ== your.email@example.com
     ```
-
-> [!IMPORTANT]
-> With cloud-init, you need to add `cloud-utils-growpart` as an additional package to ensure that the image can resize the root partition on first boot.
 
 Source: [Red Hat Documentation](https://docs.redhat.com/en/documentation/red_hat_insights/1-latest/html/deploying_and_managing_rhel_systems_in_hybrid_clouds/deploying-your-customized-images_host-management-services#configuring-credentials-to-access-your-deployed-systems_deploying-your-customized-images)
