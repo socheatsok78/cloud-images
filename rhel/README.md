@@ -11,3 +11,12 @@ To obtain the latest RHEL Cloud Images, you need the following:
 - Blueprints for the images you want to create
 
 Please follow this [guide](./rhel_image_builder.md) to create your own RHEL Cloud Images using the Image Builder tool.
+
+## Using RHEL Cloud Images
+
+Before using RHEL Cloud Images, you need to modify the OVA file to enable `cloud-init` configuration. Please follow this [guide](./rhel_ova.md) to modify the OVA file.
+
+> [!NOTE]
+> The default user for RHEL Cloud Image is `cloud-user`.
+>
+> The default user's password will be randomly generated if not provided via the `user-data` file.
