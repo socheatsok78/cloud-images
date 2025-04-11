@@ -9,6 +9,9 @@ View all repositories within your organization.
   - [Essential custom repositories](#essential-custom-repositories)
   - [Adding EPEL repository](#adding-epel-repository)
   - [Using custom repositories with Image Builder](#using-custom-repositories-with-image-builder)
+  - [Extra Packages for Enterprise Linux (EPEL)](#extra-packages-for-enterprise-linux-epel)
+    - [EPEL 8 Everything aarch64](#epel-8-everything-aarch64)
+    - [EPEL 9 Everything aarch64](#epel-9-everything-aarch64)
 
 ## Essential custom repositories
 Here are some essential custom repositories that you might want to add to your RHEL system:
@@ -45,3 +48,25 @@ Once added, you will be able to search and add packages from the custom reposito
 
 Select the packages you want to add to your image.
 ![docker-ce-3.png](./assets/docker-ce-3.png)
+
+## Extra Packages for Enterprise Linux (EPEL)
+
+There additional EPEL for `aarch64` architecture. The `x86_64` architecture is already available in the "Popular repositories" tab. If you want to add the `aarch64` architecture, you need to add it manually.
+
+### EPEL 8 Everything aarch64
+- Name: `EPEL 8 Everything aarch64`
+- Repository type: `Introspect only`
+- URL: `https://dl.fedoraproject.org/pub/epel/8/Everything/aarch64/`
+- Restrict architecture: `aarch64`
+- Restrict OS version: `el8`
+- Modularity filtering enabled: `true`
+- GPG key: `https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-8`
+
+### EPEL 9 Everything aarch64
+- Name: `EPEL 9 Everything aarch64`
+- Repository type: `Introspect only`
+- URL: `https://dl.fedoraproject.org/pub/epel/9/Everything/aarch64/`
+- Restrict architecture: `aarch64`
+- Restrict OS version: `el9`
+- Modularity filtering enabled: `true`
+- GPG key: `https://dl.fedoraproject.org/pub/epel/RPM-GPG-KEY-EPEL-9`
