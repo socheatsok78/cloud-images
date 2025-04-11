@@ -15,7 +15,7 @@ https://cloud-init.io/ | https://github.com/canonical/cloud-init
 ## Cloud Images
 These are the publicly available cloud images repositories:
 
-- Ubuntu: [site](https://ubuntu.com/) | [download](https://cloud-images.ubuntu.com/)
+- Ubuntu: [site](https://ubuntu.com/) | [download](https://cloud-images.ubuntu.com/) | [guide](./ubuntu/README.md)
 - Red Hat Enterprise Linux: [site](https://www.redhat.com/en/technologies/linux-platforms/enterprise-linux/) | [download](https://developers.redhat.com/products/rhel/download/) | [guide](./rhel/README.md)
 
 ## Virtualization Environments
