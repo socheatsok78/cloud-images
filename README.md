@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> Please note that this guide is for educational purposes only. It is not intended for production use. For production environments, please refer to the official documentation of the respective cloud image provider.
+
 # About
 
 ![logo.png](/logo.png)
