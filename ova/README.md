@@ -18,6 +18,7 @@ sha256sum image.ovf image.vmdk | awk '{ print "SHA256(" $2 ")= " $1 }' > image.m
 ```
 
 **Repackage `ova` file**:
+
 The file order is important. The `image.ovf` file must be first, followed by the `image.vmdk` file, and finally the `image.mf` file. The command below will create a new OVA file with the specified name.
 
 ```bash
