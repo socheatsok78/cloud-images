@@ -8,7 +8,7 @@ Docker CE is a community edition of Docker that is available for free. It is a p
   - [RHEL 9](#rhel-9)
 
 ## RHEL 8
-- Name: `Docker for RHEL 8`
+- Name: `Docker CE Stable RHEL 8 - x86_64`
 - Repository type: `Introspect only`
 - URL: `https://download.docker.com/linux/rhel/8/x86_64/stable/`
 - Restrict architecture: `x86_64`
@@ -17,7 +17,7 @@ Docker CE is a community edition of Docker that is available for free. It is a p
 - GPG key: `https://download.docker.com/linux/rhel/gpg`
 
 ## RHEL 9
-- Name: `Docker for RHEL 9`
+- Name: `Docker CE Stable RHEL 9 - x86_64`
 - Repository type: `Introspect only`
 - URL: `https://download.docker.com/linux/rhel/9/x86_64/stable/`
 - Restrict architecture: `x86_64`
