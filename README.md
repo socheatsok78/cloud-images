@@ -10,7 +10,7 @@ A collections of documentations, repositories and tools for Cloud Images and Clo
 
 **Cloud-init** is the industry standard multi-distribution method for cross-platform cloud instance initialization. It is supported across all major public cloud providers, provisioning systems for private cloud infrastructure, and bare-metal installations.
 
-https://cloud-init.io/
+https://cloud-init.io/ | https://github.com/canonical/cloud-init
 
 ## Cloud Images
 These are the publicly available cloud images repositories:
