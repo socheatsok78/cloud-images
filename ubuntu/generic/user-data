@@ -1,0 +1,13 @@
+#cloud-config
+apt:
+  primary:
+    - arches: [default]
+      uri: http://us.archive.ubuntu.com/ubuntu/
+package_update: true
+packages:
+  - qemu-guest-agent
+runcmd:
+  - - systemctl
+    - enable
+    - --now
+    - qemu-guest-agent.service
