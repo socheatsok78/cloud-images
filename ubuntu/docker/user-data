@@ -167,7 +167,4 @@ apt:
         -----END PGP ARMORED FILE-----
 
 runcmd:
-  - - systemctl
-    - enable
-    - --now
-    - qemu-guest-agent.service
+  - systemctl enable --now qemu-guest-agent.service
