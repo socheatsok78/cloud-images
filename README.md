@@ -1,9 +1,9 @@
 > [!IMPORTANT]
 > Please note that this guide is for educational purposes only. It is not intended for production use. For production environments, please refer to the official documentation of the respective cloud image provider.
 
-# About
+## About
 
-![logo.png](/logo.png)
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/bc/Logo_of_cloud-init.svg" height="48px" />
 
 A collections of documentations, repositories and tools for Cloud Images and Cloud Init
 
